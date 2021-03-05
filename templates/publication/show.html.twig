@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Publication{% endblock %}
+
+{% block body %}
+    <h1>Publication</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ publication.id }}</td>
+            </tr>
+            <tr>
+                <th>Text</th>
+                <td>{{ publication.text }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ publication.nom }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ publication.name }}</td>
+            </tr>
+            <tr>
+                <th>Surname</th>
+                <td>{{ publication.surname }}</td>
+            </tr>
+            <tr>
+                <th>Avatar</th>
+                <td>{{ publication.avatar }}</td>
+            </tr>
+            <tr>
+                <th>Text_publication</th>
+                <td>{{ publication.textPublication }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('publication_index') }}">back to list</a>
+
+    <a href="{{ path('publication_edit', {'id': publication.id}) }}">edit</a>
+
+    {{ include('publication/_delete_form.html.twig') }}
+{% endblock %}
